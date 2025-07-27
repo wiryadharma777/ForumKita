@@ -1,6 +1,14 @@
 ## ForumKita
 Website ForumKita merupakan sebuah platform forum diskusi yang dibuat khusus untuk para pengguna yang ingin berbagi pengetahuan, mengajukan pertanyaan, dan berdiskusi seputar topik pemrograman. Pengguna dapat membuat diskusi, menjawab pertanyaan dari pengguna lain, serta saling membantu dalam menyelesaikan permasalahan yang berkaitan dengan coding dan teknologi.
 
+## Environtments
+1. PHP 8.4.8
+2. VS Code
+3. Composer
+4. Laragon 5.0
+5. MySQL 5.7.33
+6. phpMyAdmin 6.0
+
 ## Cara Instalasi
 1. Download terlebih dahulu file .zip pada bagian code -> download zip.
 2. Extract ke lokasi yang diinginkan.
