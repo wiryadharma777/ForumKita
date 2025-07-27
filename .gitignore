@@ -4,6 +4,7 @@
 /public/hot
 /public/storage
 /public/profile_photos/*
+!/public/profile_photos/.gitkeep
 /storage/*.key
 /storage/pail
 /vendor
