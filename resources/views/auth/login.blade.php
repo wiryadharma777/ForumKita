@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ForumKita - Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  {{-- Icon --}}
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  
 </head>
 <body class="min-h-screen bg-gray-100 flex items-center justify-center px-6 overflow-hidden">
   <div class="max-w-6xl w-full bg-gray-100 flex flex-col md:flex-row items-center justify-center gap-12 py-20">

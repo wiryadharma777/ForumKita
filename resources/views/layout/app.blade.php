@@ -11,13 +11,11 @@
   <link rel="icon" href="/img/favicon.png" type="image/png">
 
   {{-- Trix Editor --}}
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/trix.css') }}">
   <link rel="stylesheet" type="text/css" href="/css/trix.css">
-  {{-- <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script> --}}
   <script type="text/javascript" src="/js/trix.js"></script>
 
   {{-- Custom CSS --}}
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col">
   
