@@ -10,18 +10,18 @@
   <link rel="icon" href="/img/favicon.png" type="image/png">
   
 </head>
-<body style="background-image: url('/img/login-bg.png')" class="bg-cover min-h-screen bg-gray-100 flex items-center justify-center px-6 overflow-hidden">
+<body style="background-image: url('/img/abstract-background-7.jpg')" class="bg-cover min-h-screen bg-gray-100 flex items-center justify-center px-6 overflow-hidden">
 
   <div class="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-12 py-20">
     <!-- Left side - Illustration -->
     <div class="hidden md:flex flex-1 justify-center items-center relative">
-      {{-- <img 
+      <img 
       class="w-[85%] absolute left-[-60px] top-[-260px]"
-      src="img/img-login.png" alt=""> --}}
+      src="img/img-login.png" alt="">
     </div>
 
     <!-- Right side - Form -->
-    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-sm">
+    <div class="bg-white p-10 rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.2)] w-full max-w-sm">
       <h1 class="font-extrabold text-3xl mb-8 text-center select-none">
         <span class="text-blue-400">Forum</span><span>Kita</span>
       </h1>

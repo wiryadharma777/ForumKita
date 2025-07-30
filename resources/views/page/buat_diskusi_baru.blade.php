@@ -12,9 +12,9 @@
                 </svg>
             </a>
 
-            <span class="mx-2 text-white">/</span>
+            <span class="mx-2 text-gray-700">/</span>
 
-            <span class="text-white font-semibold">Buat Diskusi Baru</span>
+            <span class="text-gray-700 font-semibold">Buat Diskusi Baru</span>
         </nav>
 
         <div class="bg-white rounded-lg p-5 shadow w-[45rem]">
