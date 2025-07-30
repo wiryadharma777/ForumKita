@@ -15,9 +15,9 @@
                 </svg>
             </a>
 
-            <span class="mx-2 text-gray-400">/</span>
+            <span class="mx-2 text-white">/</span>
 
-            <span class="text-gray-800 font-semibold">Detail Diskusi</span>
+            <span class="text-white font-semibold">Detail Diskusi</span>
         </nav>
 
         <!-- #endregion -->
@@ -196,7 +196,7 @@
         <!-- #region Komentar -->
         <div>
             <div class="flex justify-between items-center mb-3">
-                <h1 class="font-semibold">KOMENTAR</h1>
+                <h1 class="font-semibold text-white">KOMENTAR</h1>
                 
                 <form action="/detail-diskusi/{{ \Vinkla\Hashids\Facades\Hashids::encode($discussion->id) }}" method="GET" x-data="{ open: false }" class="relative inline-block">
 
@@ -204,7 +204,7 @@
                     <button
                         type="button"
                         @click="open = !open"
-                        class="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 transition"
+                        class="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-md text-sm text-white hover:bg-gray-100 hover:text-gray-700 transition"
                     >
                         Sort By
                         <svg class="w-4 h-4 transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -241,7 +241,7 @@
                 
                 @foreach ($allComments as $comment)
                     <div 
-                        class="bg-white rounded-lg p-5 shadow relative min-w-[40rem] border-l-2 border-blue-400"
+                        class="bg-white rounded-lg p-5 shadow relative min-w-[40rem] border-l-4 border-blue-400"
                     >
                         <div class="flex items-center gap-3 mb-2">
                             <div class="flex justify-center items-center w-9 h-9 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm select-none overflow-hidden">

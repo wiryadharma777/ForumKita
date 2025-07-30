@@ -17,17 +17,23 @@
   {{-- Custom CSS --}}
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
-  
-  @include('layout.header')
-  
-  <main class="flex flex-1 px-6 py-8 max-w-7xl mx-auto gap-6">
-    @include('layout.sidebar')
-    
-    @yield('content')
-  </main>
+<body style="background-image: url('/img/bg.png')" class="relative bg-cover bg-gray-100 min-h-screen flex flex-col">
 
-  @include('layout.footer')
+  <div class="absolute inset-0 bg-black opacity-40 z-0 pointer-events-none"></div>
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+    
+    @include('layout.header')
+    
+    <main class="flex flex-1 px-6 py-8 max-w-7xl mx-auto gap-6">
+      @include('layout.sidebar')
+      
+      @yield('content')
+    </main>
+  
+    @include('layout.footer')
+
+  </div>
 
   {{-- Sweetalert V2 --}}
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

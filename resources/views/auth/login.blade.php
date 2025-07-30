@@ -10,13 +10,14 @@
   <link rel="icon" href="/img/favicon.png" type="image/png">
   
 </head>
-<body class="min-h-screen bg-gray-100 flex items-center justify-center px-6 overflow-hidden">
-  <div class="max-w-6xl w-full bg-gray-100 flex flex-col md:flex-row items-center justify-center gap-12 py-20">
+<body style="background-image: url('/img/login-bg.png')" class="bg-cover min-h-screen bg-gray-100 flex items-center justify-center px-6 overflow-hidden">
+
+  <div class="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-12 py-20">
     <!-- Left side - Illustration -->
     <div class="hidden md:flex flex-1 justify-center items-center relative">
-      <img 
+      {{-- <img 
       class="w-[85%] absolute left-[-60px] top-[-260px]"
-      src="img/img-login.png" alt="">
+      src="img/img-login.png" alt=""> --}}
     </div>
 
     <!-- Right side - Form -->
@@ -141,6 +142,7 @@
 
     </div>
   </div>
+
   
   <script>
     const passwordInput = document.getElementById('password');

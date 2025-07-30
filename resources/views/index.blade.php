@@ -8,11 +8,11 @@
 
     {{-- Untuk tampilan hasil search --}}
     @if(request('search') || request('kategori') || request('populer'))
-      <p class="text-sm text-gray-600">
+      <p class="text-sm text-white">
           Menampilkan hasil
           @if(request('search'))
               untuk:
-              <span class="font-semibold text-blue-600">
+              <span class="font-semibold text-blue-400">
                   "{{ request('search') }}"
               </span>
           @endif
@@ -22,7 +22,7 @@
                   <span class="mx-1">|</span>
               @endif
               Kategori:
-              <span class="font-semibold text-green-600">
+              <span class="font-semibold text-green-400">
                   "{{ request('kategori') }}"
               </span>
           @endif
@@ -32,7 +32,7 @@
                   <span class="mx-1">|</span>
               @endif
               Populer:
-              <span class="font-semibold text-yellow-600">
+              <span class="font-semibold text-yellow-400">
                   @if(request('populer') === 'views')
                       Most Views
                   @elseif(request('populer') === 'likes')
@@ -71,7 +71,7 @@
 
       <div class="flex flex-col items-center justify-center py-12 text-center">
         <img src="{{ asset('img/img-not-available.png') }}" alt="Tidak ada diskusi" class="w-60 mb-2 opacity-70">
-        <p class="text-gray-600 text-sm">
+        <p class="text-white text-sm">
           Tidak ada diskusi ditemukan.
           @if (request('search') || request('kategori') || request('populer'))
             Silakan coba kata kunci atau filter lain.

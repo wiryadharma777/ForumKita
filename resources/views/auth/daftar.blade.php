@@ -10,16 +10,13 @@
   <link rel="icon" href="/img/favicon.png" type="image/png">
 
 </head>
-<body class="min-h-screen bg-gray-100 flex items-center justify-center px-6 overflow-hidden">
-  <div class="max-w-6xl w-full bg-gray-100 flex flex-col md:flex-row items-center justify-center gap-12 py-20">
+<body style="background-image: url('/img/login-bg.png')" class="bg-cover min-h-screen bg-gray-100 flex items-center justify-center px-6 overflow-hidden">
+  <div class="max-w-6xl w-full  flex flex-col md:flex-row items-center justify-center gap-12 py-20">
     <!-- Left side - Illustration -->
     <div class="hidden md:flex flex-1 justify-center items-center relative">
       {{-- <img 
-      class="w-[70%] absolute left-[-90px] top-[-330px]"
-      src="img/img-daftar.png" alt=""> --}}
-      <img 
       class="w-[70%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -ml-40"
-      src="img/img-daftar.png" alt="">
+      src="img/img-daftar.png" alt=""> --}}
     </div>
 
     <!-- Right side - Form -->
