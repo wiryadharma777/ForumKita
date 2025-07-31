@@ -15,9 +15,9 @@
                 </svg>
             </a>
 
-            <span class="mx-2 text-gray-700">/</span>
+            <span class="mx-2 text-white">/</span>
 
-            <span class="text-gray-700 font-semibold">Detail Diskusi</span>
+            <span class="text-white font-semibold">Detail Diskusi</span>
         </nav>
 
         <!-- #endregion -->
@@ -196,7 +196,7 @@
         <!-- #region Komentar -->
         <div>
             <div class="flex justify-between items-center mb-3">
-                <h1 class="font-semibold text-gray-700">KOMENTAR</h1>
+                <h1 class="font-semibold text-white">KOMENTAR</h1>
                 
                 <form action="/detail-diskusi/{{ \Vinkla\Hashids\Facades\Hashids::encode($discussion->id) }}" method="GET" x-data="{ open: false }" class="relative inline-block">
 
@@ -234,7 +234,7 @@
                 </form>
             </div>
 
-            <hr class="mb-4 border-gray-700">
+            <hr class="mb-4 border-white">
 
             <!-- Looping Komentar -->
             <div class="space-y-4 mb-4 max-h-[19.5rem] overflow-y-auto">

@@ -17,7 +17,7 @@
   {{-- Custom CSS --}}
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body style="background-image: url('/img/abstract-background-7.jpg')" class="relative bg-cover bg-gray-100 min-h-screen flex flex-col">
+<body style="background-image: url('/img/abstract-background-9.png')" class="relative bg-cover bg-gray-100 min-h-screen flex flex-col">
 
   <div class="relative z-10 flex flex-col min-h-screen">
     

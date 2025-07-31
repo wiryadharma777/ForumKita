@@ -8,7 +8,7 @@
 
     {{-- Untuk tampilan hasil search --}}
     @if(request('search') || request('kategori') || request('populer'))
-      <p class="text-sm text-gray-700">
+      <p class="text-sm text-white">
           Menampilkan hasil
           @if(request('search'))
               untuk:
@@ -70,8 +70,8 @@
     @if($allDiscussions->isEmpty())
 
       <div class="flex flex-col items-center justify-center py-12 text-center">
-        <img src="{{ asset('img/img-not-available.png') }}" alt="Tidak ada diskusi" class="w-120 mb-2">
-        <p class="text-gray-700 text-sm">
+        <img src="/img/img-not-available.png" alt="Tidak ada diskusi" class="w-120 mb-2">
+        <p class="text-white text-md">
           Tidak ada diskusi ditemukan. Silakan coba kata kunci atau filter lain.
           {{-- @if (request('search') || request('kategori') || request('populer'))
             

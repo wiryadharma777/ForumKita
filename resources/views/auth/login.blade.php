@@ -10,7 +10,7 @@
   <link rel="icon" href="/img/favicon.png" type="image/png">
   
 </head>
-<body style="background-image: url('/img/abstract-background-7.jpg')" class="bg-cover min-h-screen bg-gray-100 flex items-center justify-center px-6 overflow-hidden">
+<body style="background-image: url('/img/abstract-background-9.png')" class="bg-cover min-h-screen bg-gray-100 flex items-center justify-center px-6 overflow-hidden">
 
   <div class="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-12 py-20">
     <!-- Left side - Illustration -->
