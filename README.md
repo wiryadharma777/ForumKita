@@ -14,7 +14,7 @@ Website ForumKita merupakan sebuah platform forum diskusi yang dibuat khusus unt
 2. Extract ke lokasi yang diinginkan.
 3. Jalankan server database yang digunakan ex: MySQL melalui XAMPP, Laragon etc.
 4. Buka project ke code editor, ex: VS Code etc.
-6. Jalankan perintah <code><h1>composer install</h1></code>
+6. Jalankan perintah <code>composer install</code>
 7. Copy and rename .env.example menjadi .env
 8. Jalankan perintah <code>php artisan key:generate</code>
 9. Rubah .env file pada bagian DB_DATABASE sesuai yg kita inginkan, ex: website_forum.
