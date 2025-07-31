@@ -6,15 +6,14 @@
 
 <main class="flex-1 p-6">
 
-    {{-- Notification --}}
+    <!-- #region Notification -->
     @if (session('success'))
         <div class="flex items-start justify-between rounded-md border border-green-300 bg-green-50 p-4 text-green-800 shadow-md transition-all">
             <div class="flex items-center gap-2">
-            <!-- Message -->
+            
             <span class="text-sm font-medium">{{ session('success') }} <a href="/login" class=" hover:text-blue-400 hover:underline"></a></span>
             </div>
 
-            <!-- Close button -->
             <button
             onclick="this.parentElement.classList.add('opacity-0'); setTimeout(() => this.parentElement.remove(), 300);"
             class="ml-4 text-green-600 hover:text-green-800 transition-colors"
@@ -26,10 +25,13 @@
             </button>
         </div>
     @endif
+    <!-- #endregion -->
 
+    <!-- #region Update Profile & Image -->
     <div class="bg-blue-50 border border-blue-100 rounded-md p-6 mb-6 mt-6">
         <h2 class="text-xl font-semibold mb-4">Informasi Profil</h2>
 
+        <!-- #region Form Update Profile & Image -->
         <form action="/profile/process" method="post" enctype="multipart/form-data" class="space-y-4">
             @csrf
 
@@ -89,15 +91,18 @@
             <button
                 class="bg-blue-400 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-500 transition-colors"
                 type="submit">
-                Simpan
+                SIMPAN
             </button>
         </form>
+        <!-- #endregion -->
     </div>
+    <!-- #endregion -->
 
-    <!-- Ganti Password -->
+    <!-- #region Update Password -->
     <div class="bg-white border border-gray-200 rounded-md p-6">
         <h2 class="text-xl font-semibold mb-4">Ganti Password</h2>
 
+        <!-- #region Form Update Password -->
         <form action="/reset-password/process" method="POST" class="space-y-4">
             @csrf
 
@@ -140,10 +145,13 @@
             <button
             class="bg-blue-400 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-500 transition-colors"
             type="submit">
-            Simpan
+            SIMPAN
             </button>
         </form>
+        <!-- #endregion -->
     </div>
+    <!-- #endregion -->
+
 </main>
 
 @endsection
