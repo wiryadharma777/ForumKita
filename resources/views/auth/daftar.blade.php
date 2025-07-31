@@ -6,7 +6,7 @@
   <title>ForumKita - Daftar</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  {{-- Icon --}}
+  <!-- Icon -->
   <link rel="icon" href="/img/favicon.png" type="image/png">
 
 </head>
@@ -25,7 +25,7 @@
         <span class="text-blue-400">Forum</span><span>Kita</span>
       </h1>
 
-      {{-- Notification --}}
+      <!-- #region Notification -->
       @if (session('success'))
         <div class="mb-4 flex items-center justify-between rounded-md border border-green-300 bg-green-50 p-4 text-green-800 shadow-md relative transition-all">
           <div class="flex items-center gap-2">
@@ -45,6 +45,10 @@
           </button>
         </div>
       @endif
+
+      <!-- #endregion -->
+
+      <!-- #region Daftar Form -->
 
       <form class="flex flex-col gap-5" action="/daftar" method="POST">
         @csrf
@@ -103,7 +107,6 @@
         <div class="flex flex-col relative">
           <label for="password" class="mb-1 text-sm font-semibold text-gray-700">Password</label>
 
-          <!-- Wrapper relative untuk icon -->
           <div class="relative">
               <input
               class="border border-gray-300 rounded-md px-4 py-2 pr-10 w-full focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300"
@@ -114,14 +117,12 @@
               required
               />
 
-              <!-- Eye Icon -->
               <button
               type="button"
               id="togglePassword"
               class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 hover:text-gray-700 transition-colors duration-200"
               >
               
-              <!-- Icon eye open -->
               <svg id="eyeOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -129,7 +130,6 @@
                   d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
                 
-                <!-- Icon eye closed -->
                 <svg id="eyeClosed" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a10.05 10.05 0 011.67-3.045m1.784-2.347A9.953 9.953 0 0112 5c4.477 0 8.268 2.943 9.542 7a9.969 9.969 0 01-4.293 5.62M15 12a3 3 0 11-6 0 3 3 0 016 0zm-9 9l18-18" />
@@ -146,7 +146,6 @@
         <div class="flex flex-col relative">
           <label for="password_confirmation" class="mb-1 text-sm font-semibold text-gray-700">Password Confirmation</label>
 
-          <!-- Wrapper relative untuk icon -->
           <div class="relative">
               <input
               class="border border-gray-300 rounded-md px-4 py-2 pr-10 w-full focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300"
@@ -157,13 +156,12 @@
               required
               />
 
-              <!-- Eye Icon -->
               <button
               type="button"
               id="togglePasswordConfirmation"
               class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 hover:text-gray-700 transition-colors duration-200"
               >
-              <!-- Icon eye open -->
+              
               <svg id="eyeOpenConfirmation" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -171,7 +169,6 @@
                   d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
 
-              <!-- Icon eye closed -->
               <svg id="eyeClosedConfirmation" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a10.05 10.05 0 011.67-3.045m1.784-2.347A9.953 9.953 0 0112 5c4.477 0 8.268 2.943 9.542 7a9.969 9.969 0 01-4.293 5.62M15 12a3 3 0 11-6 0 3 3 0 016 0zm-9 9l18-18" />
@@ -194,23 +191,13 @@
         </div>
       </form>
 
+      <!-- #endregion -->
+
     </div>
   </div>
   <script>
-    // // Auto Username
-    // const nameInput = document.getElementById('nama');
-    // const usernameInput = document.getElementById('username');
 
-    // nameInput.addEventListener('input', function() {
-    //   // Ambil isi nama
-    //   let nama = nameInput.value;
-
-    //   // Buat lowercase, hapus spasi
-    //   let username = nama.toLowerCase().replace(/\s+/g, '');
-
-    //   // Isi ke input username
-    //   usernameInput.value = username;
-    // });
+    // #region Password Hider
 
     // Eye Functionality - Password
     const passwordInput = document.getElementById('password');
@@ -241,6 +228,8 @@
         eyeOpenConfirmation.classList.toggle('hidden', !isPassword);
         eyeClosedConfirmation.classList.toggle('hidden', isPassword);
     });
+
+    // #endregion
 
 </script>
 </body>

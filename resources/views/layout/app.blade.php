@@ -7,14 +7,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="//unpkg.com/alpinejs" defer></script>
 
-  {{-- Icon --}}
+  <!-- Icon -->
   <link rel="icon" href="/img/favicon.png" type="image/png">
 
-  {{-- Trix Editor --}}
+  <!-- Trix Editor -->
   <link rel="stylesheet" type="text/css" href="/css/trix.css">
   <script type="text/javascript" src="/js/trix.js"></script>
 
-  {{-- Custom CSS --}}
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body style="background-image: url('/img/abstract-background-9.png')" class="relative bg-cover bg-gray-100 min-h-screen flex flex-col">
@@ -33,7 +33,7 @@
 
   </div>
 
-  {{-- Sweetalert V2 --}}
+  <!-- Sweetalert V2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

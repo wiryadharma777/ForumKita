@@ -6,7 +6,7 @@
     <section class="flex flex-col flex-1">
         <nav class="flex items-center text-gray-600 text-sm mb-4" aria-label="Breadcrumb">
             <a href="/" class="flex items-center text-blue-500 hover:text-blue-700 transition-colors">
-                <!-- Home icon Heroicons Solid -->
+                
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10.707 1.293a1 1 0 00-1.414 0l-7 7A1 1 0 003 9h1v7a1 1 0 001 1h4a1 1 0 001-1v-4h2v4a1 1 0 001 1h4a1 1 0 001-1V9h1a1 1 0 00.707-1.707l-7-7z" />
                 </svg>
@@ -19,15 +19,15 @@
 
         <div class="bg-white rounded-lg p-5 shadow w-[45rem]">
 
-            {{-- Notifications --}}
+            <!-- #region Notification -->
+
             @if (session('success'))
                 <div class="mb-4 flex items-center justify-between rounded-md border border-green-300 bg-green-50 p-4 text-green-800 shadow-md relative transition-all">
                     <div class="flex items-center gap-2">
-                    <!-- Message -->
+                    
                     <span class="text-sm font-medium">{{ session('success') }} <a href="/login" class=" hover:text-blue-400 hover:underline"></a></span>
                     </div>
 
-                    <!-- Close button -->
                     <button
                     onclick="this.parentElement.classList.add('opacity-0'); setTimeout(() => this.parentElement.remove(), 300);"
                     class="ml-4 text-green-600 hover:text-green-800 transition-colors"
@@ -40,8 +40,12 @@
                 </div>
             @endif
 
+            <!-- #endregion -->
+
+            <!-- #region Form Buat Diskusi Baru -->
+
             <form action="/buat-diskusi-baru" method="POST">
-            @csrf
+                @csrf
 
                 <div class="flex flex-col mb-4">
                     <label for="judul" class="mb-1 text-sm font-semibold text-gray-700">Judul</label>
@@ -75,17 +79,12 @@
                                 <option value="{{ $category->kategori }}" {{ old('kategori') == $category->kategori ? 'selected' : '' }}>{{ $category->kategori }}</option>
                             @endforeach
 
-                            {{-- <option value="Front End" {{ old('kategori') == 'Front End' ? 'selected' : '' }}>Front End</option>
-                            <option value="Back End" {{ old('kategori') == 'Back End' ? 'selected' : '' }}>Back End</option>
-                            <option value="Database" {{ old('kategori') == 'Database' ? 'selected' : '' }}>Database</option>
-                            <option value="Deployment" {{ old('kategori') == 'Deployment' ? 'selected' : '' }}>Deployment</option> --}}
                         </select>
 
                         @error('kategori')
                             <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                         @enderror
         
-                        <!-- Custom Arrow Icon -->
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
                                 viewBox="0 0 24 24">
@@ -113,6 +112,9 @@
                 POST
                 </button>
             </form>
+
+            <!-- #endregion -->
+        
         </div>
     </section>
 @endsection

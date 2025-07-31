@@ -9,7 +9,7 @@
         <!-- #region Breadcrumbs -->
         <nav class="flex items-center text-gray-600 text-sm" aria-label="Breadcrumb">
             <a href="/" class="flex items-center text-blue-500 hover:text-blue-700 transition-colors">
-                <!-- Home icon Heroicons Solid -->
+                
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10.707 1.293a1 1 0 00-1.414 0l-7 7A1 1 0 003 9h1v7a1 1 0 001 1h4a1 1 0 001-1v-4h2v4a1 1 0 001 1h4a1 1 0 001-1V9h1a1 1 0 00.707-1.707l-7-7z" />
                 </svg>
@@ -19,18 +19,16 @@
 
             <span class="text-white font-semibold">Detail Diskusi</span>
         </nav>
-
         <!-- #endregion -->
         
         <!-- #region Notification -->
         @if (session('success'))
             <div class="mb-4 flex items-start justify-between rounded-md border border-green-300 bg-green-50 p-4 text-green-800 shadow-md relative transition-all">
                 <div class="flex items-center gap-2">
-                <!-- Message -->
+                
                 <span class="text-sm font-medium">{{ session('success') }} <a href="/login" class=" hover:text-blue-400 hover:underline"></a></span>
                 </div>
 
-                <!-- Close button -->
                 <button
                 onclick="this.parentElement.classList.add('opacity-0'); setTimeout(() => this.parentElement.remove(), 300);"
                 class="ml-4 text-green-600 hover:text-green-800 transition-colors"
@@ -42,7 +40,6 @@
                 </button>
             </div>
         @endif
-
         <!-- #endregion -->
 
         <!-- #region Detail Diskusi -->
@@ -69,8 +66,11 @@
             <div class="text-gray-600 text-sm mb-3 max-w-[37rem]">{!! $discussion->deskripsi !!}</div>
 
             <div class="flex items-center gap-3 text-xs text-gray-500">
+                
+                <!-- #region Form Like -->
+
                 <form action="/like" method="POST" class="inline">
-                @csrf
+                    @csrf
                     <input type="hidden" name="discussion_id" value="{{ $discussion->id }}">
                     <input type="hidden" name="type" value="discussion">
 
@@ -79,7 +79,7 @@
                         aria-label="Like">
                         
                         @if ($discussion->is_liked)
-                        <!-- Heart Filled -->
+                        
                         <svg xmlns="http://www.w3.org/2000/svg"
                             fill="currentColor"
                             viewBox="0 0 24 24"
@@ -90,7 +90,7 @@
                             d="M4.318 6.318a4.5 4.5 0 010 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                         </svg>
                         @else
-                        <!-- Heart Outline -->
+                        
                         <svg xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -105,8 +105,12 @@
                         <span>{{ $discussion->likes_count}}</span>
                     </button>
                 </form>
+
+                <!-- #endregion -->
+
+                <!-- Views -->
                 <div class="flex items-center gap-1" aria-label="Dilihat">
-                    <!-- Ikon Mata -->
+                    
                     <svg xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -121,8 +125,9 @@
                     <span>{{ $discussion->views_count }}</span>
                 </div>
 
+                <!-- Time -->
                 <span class="flex items-center gap-1 text-gray-400 text-sm">
-                    <!-- Icon jam -->
+                    
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="w-4 h-4"
                         fill="none"
@@ -136,10 +141,13 @@
                 </span>
 
                 <div class="flex ml-auto gap-2">
+
                     @if (auth()->check() && auth()->user()->id === $discussion->user_id)
+                        
+                        <!-- Edit -->
                         <a href="/detail-diskusi/{{ \Vinkla\Hashids\Facades\Hashids::encode($discussion->id) }}/edit">
                             <button class="flex items-center gap-1 px-4 py-2 bg-yellow-400 text-white rounded-lg hover:bg-yellow-500 transition">
-                                <!-- Icon Edit -->
+                                
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15.232 5.232l3.536 3.536M9 11l6 6M3 21h6l12-12a2.828 2.828 0 10-4-4L5 17v4z" />
@@ -148,21 +156,7 @@
                             </button>
                         </a>
 
-
-                        {{-- <form action="/detail-diskusi/delete" method="POST" class="inline" onsubmit="return confirm('Anda yakin ingin menghapus diskusi ini?')">
-                        @csrf
-                            <input type="hidden" name="discussion_id" value="{{ $discussion->id }}">
-                            <button type="submit"
-                                class="flex items-center gap-1 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors">
-                                <!-- Icon Delete -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                                Delete
-                            </button>
-                        </form> --}}
+                        <!-- #region Delete Form  -->
 
                         <form id="delete-form-{{ $discussion->id }}"
                         action="/detail-diskusi/delete"
@@ -183,8 +177,10 @@
                                 Delete
                             </button>
                         </form>
-                    @endif
 
+                        <!-- #endregion -->
+                    
+                    @endif
                     
                 </div>
             </div>
@@ -198,6 +194,7 @@
             <div class="flex justify-between items-center mb-3">
                 <h1 class="font-semibold text-white">KOMENTAR</h1>
                 
+                <!-- #region Filter Sort By -->
                 <form action="/detail-diskusi/{{ \Vinkla\Hashids\Facades\Hashids::encode($discussion->id) }}" method="GET" x-data="{ open: false }" class="relative inline-block">
 
                     <!-- Tombol Sort By -->
@@ -232,11 +229,13 @@
                         >Most Likes</button>
                     </div>
                 </form>
+                <!-- #endregion -->
+
             </div>
 
             <hr class="mb-4 border-white">
 
-            <!-- Looping Komentar -->
+            <!-- #region Looping Komentar -->
             <div class="space-y-4 mb-4 max-h-[19.5rem] overflow-y-auto">
                 
                 @foreach ($allComments as $comment)
@@ -262,8 +261,10 @@
                         <div class="text-gray-600 text-sm mb-3 truncate max-w-[37rem]">{{ $comment->komentar }}</div>
         
                         <div class="flex items-center justify-between text-xs text-gray-500">
+
+                            <!-- #region Form Like -->
                             <form action="/like" method="POST" class="inline">
-                            @csrf
+                                @csrf
                                 <input type="hidden" name="comment_id" value="{{ $comment->id }}">
                                 <input type="hidden" name="type" value="comment">
 
@@ -272,7 +273,7 @@
                                     aria-label="Like">
                                     
                                     @if ($comment->is_liked)
-                                    <!-- Heart Filled -->
+                                    
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
@@ -283,7 +284,7 @@
                                         d="M4.318 6.318a4.5 4.5 0 010 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                                     </svg>
                                     @else
-                                    <!-- Heart Outline -->
+                                    
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
@@ -298,9 +299,11 @@
                                     <span>{{ $comment->likes_count }}</span>
                                 </button>
                             </form>
+                            <!-- #endregion -->
         
+                            <!-- #region Time -->
                             <span class="flex items-center gap-1 text-gray-400 text-sm">
-                                <!-- Icon jam -->
+                                
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="w-4 h-4"
                                     fill="none"
@@ -312,15 +315,19 @@
                                 </svg>
                                 {{ $comment->created_at->diffForHumans() }}
                             </span>
+                            <!-- #endregion -->
+                        
                         </div>
                     </div>
                 @endforeach
             </div>
+            <!-- #endregion -->
 
-            <!-- Komentar Form -->
+            <!-- #region Komentar Submission -->
             <div 
                     class="bg-white rounded-lg p-5 shadow relative min-w-[40rem]"
                 >
+                    <!-- #region Komentar Form -->
                     <form action="/komentar" method="POST">
                         @csrf
 
@@ -345,16 +352,17 @@
                             Kirim
                             </button>
                         </div>
-
-
                     </form>
+                    <!-- #endregion -->
             </div>
+            <!-- #endregion -->
         </div>
         <!-- #endregion -->
         
     </section>
     
     <script>
+
         // #region Sweetalert Delete Diskusi
         function confirmDelete(id) {
             Swal.fire({
@@ -371,7 +379,7 @@
                 }
             })
         }
-
         // #endregion
+    
     </script>
 @endsection

@@ -6,7 +6,8 @@
 
   <section class="flex-1 flex flex-col space-y-6">
 
-    {{-- Untuk tampilan hasil search --}}
+    <!-- #region Search Result -->
+
     @if(request('search') || request('kategori') || request('populer'))
       <p class="text-sm text-white">
           Menampilkan hasil
@@ -44,8 +45,11 @@
           @endif
       </p>
     @endif
+
+    <!-- #endregion -->
     
-    {{-- Notifications --}}
+    <!-- #region Notification -->
+
     @if (session('success'))
       <div class="flex items-center justify-between rounded-md border border-green-300 bg-green-50 p-4 text-green-800 shadow-md relative transition-all">
         <div class="flex items-center gap-2">
@@ -65,6 +69,8 @@
         </button>
       </div>
     @endif
+    
+    <!-- #endregion -->
 
     <!-- #region Looping Disucssion Card -->
     @if($allDiscussions->isEmpty())
@@ -106,17 +112,17 @@
             class="hover:underline text-gray-900 hover:text-blue-500 transition-colors ">
               <h3 class="font-semibold text-lg tracking-wide mb-1 inline">{{ $discussion->judul }}</h3>
             </a>
-            {{-- <div class="text-gray-600 text-sm mb-3 truncate max-w-[37rem]">{!! $discussion->deskripsi !!}</div> --}}
-            {{-- <div class="text-gray-600 text-sm mb-3 truncate max-w-[37rem]">{!! Str::limit(strip_tags($discussion->deskripsi), 100) !!}</div> --}}
             <div class="text-gray-600 text-sm mb-3 line-clamp-1 max-w-[37rem]">
                 {!! $discussion->deskripsi !!}
             </div>
 
 
             <div class="flex items-center gap-3 text-xs text-gray-500">
-              {{-- Form Button Like --}}
+              
+              <!-- #region Form Like -->
+
               <form action="/like" method="POST" class="inline">
-              @csrf
+                @csrf
                 <input type="hidden" name="discussion_id" value="{{ $discussion->id }}">
                 <input type="hidden" name="type" value="discussion">
 
@@ -152,10 +158,15 @@
                 </button>
               </form>
 
+              <!-- #endregion -->
+
+              <!-- Komentar -->
               <div class="flex items-center gap-1 text-green-400" aria-label="Komentar">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H9l-4 4v-4H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 <span>{{ $discussion->comments_count }} komentar</span>
               </div>
+
+              <!-- Views -->
               <div class="flex items-center gap-1" aria-label="Dilihat">
                 <!-- Ikon Mata -->
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -172,8 +183,9 @@
                 <span>{{ $discussion->views_count }}</span>
               </div>
 
+              <!-- Time -->
               <span class="flex items-center gap-1 text-gray-400 text-sm">
-                <!-- Icon jam -->
+                
                 <svg xmlns="http://www.w3.org/2000/svg"
                     class="w-4 h-4"
                     fill="none"
@@ -196,10 +208,13 @@
 
     <!-- #endregion -->
 
-    {{-- Pagination --}}
+    <!-- #region Pagination -->
+
     <div class="">
       {{ $allDiscussions->links() }}
     </div>
+
+    <!-- #endregion -->
     
   </section>
   

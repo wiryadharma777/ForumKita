@@ -1,13 +1,15 @@
 <header class="bg-white shadow px-6 py-3 flex items-center justify-between sticky top-0 z-50">
+    
     <h1 class="text-2xl font-extrabold text-gray-900">
         <a href="/"><span class="text-blue-400">Forum</span><span>Kita</span></a>
     </h1>
 
-    <!-- Search Box -->
+    <!-- #region Form Search -->
+
     <form action="/search" method="get"
         class="flex flex-1 max-w-md mx-6 relative" role="search" aria-label="Pencarian topik">
 
-        <!-- #region Bawa hidden filter lain -->
+        <!-- #region Check Request Filter -->
         @if(request('kategori'))
             <input type="hidden" name="kategori" value="{{ request('kategori') }}">
         @endif
@@ -35,7 +37,6 @@
                 viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
 
-        {{-- TOMBOL X KHUSUS CLEAR SEARCH --}}
         @if(request('search'))
             @php
                 $onlySearch = !request('kategori') && !request('populer');
@@ -44,7 +45,7 @@
             <a href="{{ $onlySearch ? '/' : route('search', request()->except('search')) }}"
                 class="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-red-500 transition"
                 aria-label="Clear Search">
-                <!-- Icon X -->
+                
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -54,13 +55,17 @@
         @endif
 
     </form>
+
+    <!-- #endregion -->
     
-    <!-- Profile & logout -->
+    <!-- #region Profile & logout -->
+
     <div class="flex items-center gap-4">
         @auth
             <div class="relative inline-block text-left" x-data="{ open: false }">
                 
-                <!-- Profile -->
+                <!-- #region Profile -->
+
                 <button @click="open = !open" class="flex items-center gap-0.5 focus:outline-none">
                     <div class="flex justify-center items-center w-9 h-9 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm select-none overflow-hidden">
                         @if ($user->pp)
@@ -81,6 +86,8 @@
                     </svg>
                 </button>
 
+                <!-- #endregion -->
+
                 <!-- Dropdown -->
                 <div 
                     x-show="open"
@@ -98,6 +105,7 @@
                     </a>
 
                     <!-- #region Logout -->
+
                     <form method="POST" action="/logout">
                         @csrf
                         <button type="submit" class="flex items-center gap-2 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -109,10 +117,14 @@
                             Logout
                         </button>
                     </form>
+
                     <!-- #endregion -->
 
                 </div>
             </div>
         @endauth
     </div>
+
+    <!-- #endregion -->
+
 </header>
