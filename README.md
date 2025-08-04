@@ -1,7 +1,7 @@
 ## ForumKita
 Website ForumKita merupakan sebuah platform forum diskusi yang dibuat khusus untuk para pengguna yang ingin berbagi pengetahuan, mengajukan pertanyaan, dan berdiskusi seputar topik pemrograman. Pengguna dapat membuat diskusi, menjawab pertanyaan dari pengguna lain, serta saling membantu dalam menyelesaikan permasalahan yang berkaitan dengan coding dan teknologi.
 
-#Kelompok
+## Kelompok
 
 Anggota Kelompok:
 - Eka
