@@ -85,9 +85,23 @@
                 <div class="flex flex-col relative">
                     <label for="username" class="mb-1 text-sm font-semibold text-gray-700 sr-only">Username</label>
                     <div class="relative flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-4 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                          <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H9V7a3 3 0 016 0v2a2 2 0 002 2v5a2 2 0 002 2h1a1 1 0 100-2h-1v-5a4 4 0 00-4-4V7a5 5 0 00-5-5z" />
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="absolute left-4 h-5 w-5 text-gray-400"
+                            aria-hidden="true">
+                            <!-- bentuk kertas -->
+                            <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
+                            <!-- garis teks -->
+                            <line x1="8" y1="13" x2="16" y2="13"/>
+                            <line x1="8" y1="17" x2="16" y2="17"/>
+                            <line x1="8" y1="9" x2="10" y2="9"/>
                         </svg>
+
                         <input
                             class="border border-gray-300 rounded-full px-12 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 w-full"
                             id="username"
