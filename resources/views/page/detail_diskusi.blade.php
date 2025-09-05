@@ -15,9 +15,9 @@
                 </svg>
             </a>
 
-            <span class="mx-2 text-white">/</span>
+            <span class="mx-2 text-gray-700">/</span>
 
-            <span class="text-white font-semibold">Detail Diskusi</span>
+            <span class="text-gray-700 font-bold">Detail Diskusi</span>
         </nav>
         <!-- #endregion -->
         
@@ -44,7 +44,7 @@
 
         <!-- #region Detail Diskusi -->
         <div 
-            class="bg-white rounded-lg p-5 shadow relative min-w-[40rem]"
+            class="bg-white rounded-lg p-5 shadow-md relative min-w-[40rem]"
         >
             <div class="flex items-center gap-3 mb-2">
             <div class="flex justify-center items-center w-9 h-9 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm select-none overflow-hidden">
@@ -192,7 +192,7 @@
         <!-- #region Komentar -->
         <div>
             <div class="flex justify-between items-center mb-3">
-                <h1 class="font-semibold text-white">KOMENTAR</h1>
+                <h1 class="font-semibold text-gray-700">KOMENTAR</h1>
                 
                 <!-- #region Filter Sort By -->
                 <form action="/detail-diskusi/{{ \Vinkla\Hashids\Facades\Hashids::encode($discussion->id) }}" method="GET" x-data="{ open: false }" class="relative inline-block">
@@ -233,14 +233,14 @@
 
             </div>
 
-            <hr class="mb-4 border-white">
+            <hr class="mb-4 border-gray-700">
 
             <!-- #region Looping Komentar -->
             <div class="space-y-4 mb-4 max-h-[19.5rem] overflow-y-auto">
                 
                 @foreach ($allComments as $comment)
                     <div 
-                        class="bg-white rounded-lg p-5 shadow relative min-w-[40rem] border-l-4 border-blue-400"
+                        class="bg-white rounded-lg p-5 shadow-md relative min-w-[40rem] border-l-4 border-blue-400"
                     >
                         <div class="flex items-center gap-3 mb-2">
                             <div class="flex justify-center items-center w-9 h-9 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm select-none overflow-hidden">
@@ -320,12 +320,13 @@
                         </div>
                     </div>
                 @endforeach
+                <br>
             </div>
             <!-- #endregion -->
 
             <!-- #region Komentar Submission -->
             <div 
-                    class="bg-white rounded-lg p-5 shadow relative min-w-[40rem]"
+                    class="bg-white rounded-lg p-5 shadow-md relative min-w-[40rem]"
                 >
                     <!-- #region Komentar Form -->
                     <form action="/komentar" method="POST">

@@ -2,7 +2,7 @@
 
 <!-- #region Buat Diskusi Baru -->
 
-<section class="bg-white rounded-lg p-4 shadow">
+<section class="bg-white rounded-lg p-6 shadow-md">
     <a href="/buat-diskusi-baru"
         class="bg-blue-400 hover:bg-blue-500 text-white text-sm rounded px-4 py-2 font-semibold uppercase tracking-wide transition-colors duration-150">
         Buat Diskusi Baru
@@ -16,7 +16,7 @@
 
 <!-- #region Filter Kategori -->
 
-<section aria-labelledby="kategori" class="bg-white rounded-lg shadow p-4">
+<section aria-labelledby="kategori" class="bg-white rounded-lg shadow-md p-4">
     <h2 id="kategori" class="font-semibold text-gray-700 mb-2 uppercase text-sm tracking-wide pb-2 border-b border-slate-300">Kategori</h2>
     <ul class="divide-y divide-gray-100">
 
@@ -69,7 +69,7 @@
 
 <!-- #region Filter Most -->
 
-<section aria-label="Popular info" class="bg-white rounded-lg p-4 shadow text-gray-700 text-sm">
+<section aria-label="Popular info" class="bg-white rounded-lg p-4 shadow-md text-gray-700 text-sm">
 
     <a href="{{ route('search', [
         'search' => request('search'),

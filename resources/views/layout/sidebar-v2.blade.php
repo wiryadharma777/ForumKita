@@ -1,4 +1,4 @@
-<aside style="background-image: url('/img/side-background-2.png');" class="sticky top-16 w-64 h-[calc(100vh-4rem)] bg-white border-r border-gray-200 p-6 overflow-y-auto">
+<aside class="sticky top-16 w-64 h-[calc(100vh-4rem)] bg-white border-r border-gray-200 p-6 overflow-y-auto">
     
     <!-- #region User Menu -->
     @if (auth()->user()->role === 'user' || auth()->user()->role === 'admin')

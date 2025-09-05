@@ -14,19 +14,19 @@
                 </svg>
             </a>
 
-            <span class="mx-2 text-white">/</span>
+            <span class="mx-2 text-gray-700">/</span>
 
             <a href="/detail-diskusi/{{ \Vinkla\Hashids\Facades\Hashids::encode($discussion->id) }}">
-                <span class="text-white font-semibold hover:text-blue-500 hover:underline transition-all">Detail Diskusi</span>
+                <span class="text-gray-700 font-semibold hover:text-blue-500 hover:underline transition-all">Detail Diskusi</span>
             </a>
 
-            <span class="mx-2 text-white">/</span>
+            <span class="mx-2 text-gray-700">/</span>
 
-            <span class="text-white font-semibold">Edit Diskusi</span>
+            <span class="text-gray-700 font-bold">Edit Diskusi</span>
         </nav>
         <!-- #endregion -->
 
-        <div class="bg-white rounded-lg p-5 shadow w-[45rem]">
+        <div class="bg-white rounded-lg p-5 shadow-md w-[45rem]">
 
             <!-- #region Notification -->
             @if (session('success'))

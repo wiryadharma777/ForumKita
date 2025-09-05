@@ -9,7 +9,7 @@
     <!-- #region Search Result -->
 
     @if(request('search') || request('kategori') || request('populer'))
-      <p class="text-sm text-white">
+      <p class="text-sm text-gray-700">
           Menampilkan hasil
           @if(request('search'))
               untuk:
@@ -23,7 +23,7 @@
                   <span class="mx-1">|</span>
               @endif
               Kategori:
-              <span class="font-semibold text-green-300">
+              <span class="font-semibold text-green-400">
                   "{{ request('kategori') }}"
               </span>
           @endif
@@ -33,7 +33,7 @@
                   <span class="mx-1">|</span>
               @endif
               Populer:
-              <span class="font-semibold text-yellow-300">
+              <span class="font-semibold text-red-400">
                   @if(request('populer') === 'views')
                       Most Views
                   @elseif(request('populer') === 'likes')
@@ -77,7 +77,7 @@
 
       <div class="flex flex-col items-center justify-center py-12 text-center">
         <img src="/img/img-not-available.png" alt="Tidak ada diskusi" class="w-120 mb-2">
-        <p class="text-white text-md">
+        <p class="text-gray-700 text-md">
           Tidak ada diskusi ditemukan. Silakan coba kata kunci atau filter lain.
           {{-- @if (request('search') || request('kategori') || request('populer'))
             
@@ -210,7 +210,7 @@
 
     <!-- #region Pagination -->
 
-    <div class="">
+    <div>
       {{ $allDiscussions->links() }}
     </div>
 
