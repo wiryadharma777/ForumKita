@@ -27,7 +27,7 @@
             <h1 class="text-4xl font-bold mb-4">
                 Selamat Datang di <span class="text-blue-200">ForumKita</span>
             </h1>
-            <p class="text-lg font-light leading-relaxed max-w-md">
+            <p class="text-lg font-light leading-relaxed">
                 Website ForumKita adalah platform diskusi untuk berbagi pengetahuan, mengajukan pertanyaan, dan berdiskusi seputar pemrograman.
             </p>
             <div class="absolute bottom-0 left-0 w-full h-full">

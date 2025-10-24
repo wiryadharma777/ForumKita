@@ -26,7 +26,7 @@
             <h1 class="text-4xl font-bold mb-4">
                 Bergabung dengan <span class="text-blue-200">Komunitas Kami</span>
             </h1>
-            <p class="text-lg font-light leading-relaxed max-w-md">
+            <p class="text-lg font-light leading-relaxed">
                 Daftar sekarang untuk mulai berbagi kode, menanyakan pertanyaan teknis, dan berkolaborasi dengan sesama developer.
             </p>
             <div class="absolute bottom-0 left-0 w-full h-full">

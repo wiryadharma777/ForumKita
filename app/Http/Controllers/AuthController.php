@@ -65,13 +65,13 @@ class AuthController extends Controller
         ]);
 
         $credentials['email'] = strtolower($credentials['email']);
-
-        if(Auth::attempt($credentials)){
+    
+        if (Auth::attempt($credentials)) {
             $user = Auth::user();
 
-            if($user->status == 0){
+            if ($user->status == 0) {
                 Auth::logout();
-                return redirect('/login')->with('error', 'Akun ada telah dinonaktifkan.')->withInput();
+                return redirect('/login')->with('error', 'Akun anda telah dinonaktifkan.')->withInput();
             }
 
             request()->session()->regenerate();

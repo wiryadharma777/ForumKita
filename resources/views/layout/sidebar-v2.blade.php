@@ -58,7 +58,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M17 20h5v-2a4 4 0 00-5-4M9 20H4v-2a4 4 0 015-4m6-4a4 4 0 11-8 0 4 4 0 018 0zM17 11a4 4 0 100-8 4 4 0 000 8z" />
             </svg>
-            Manage User
+            Kelola User
             </a>
 
             <a href="/categories" class="flex items-center gap-3 text-gray-600 hover:text-blue-600 transition py-2">
@@ -71,7 +71,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M3 7a2 2 0 012-2h5l2 2h7a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
             </svg>
-            Manage Kategori
+            Kelola Kategori
             </a>
         </nav>
         <!-- #endregion -->
