@@ -1,3 +1,14 @@
 [x-cloak] {
     display: none !important;
 }
+
+/* Untuk Chrome, Safari, dan Opera (Webkit) */
+.custom-scrollbar::-webkit-scrollbar {
+    display: none; /* Menyembunyikan scrollbar */
+}
+
+/* Untuk Internet Explorer, Edge, dan Firefox */
+.custom-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

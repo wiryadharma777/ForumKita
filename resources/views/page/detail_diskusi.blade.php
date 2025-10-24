@@ -236,92 +236,94 @@
             <hr class="mb-4 border-gray-700">
 
             <!-- #region Looping Komentar -->
-            <div class="space-y-4 mb-4 max-h-[19.5rem] overflow-y-auto">
-                
-                @foreach ($allComments as $comment)
-                    <div 
-                        class="bg-white rounded-lg p-5 shadow-md relative min-w-[40rem] border-l-4 border-blue-400"
-                    >
-                        <div class="flex items-center gap-3 mb-2">
-                            <div class="flex justify-center items-center w-9 h-9 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm select-none overflow-hidden">
-                                @if ($comment->user->pp)
-                                    <img src="{{ asset($comment->user->pp) }}" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
-                                @else
-                                    @php
-                                    $nama = trim($comment->user->nama ?? '');
-                                    $parts = explode(' ', $nama);
-                                    $first = strtoupper(substr($parts[0] ?? '', 0, 1));
-                                    $last = strtoupper(substr(end($parts) ?: '', 0, 1));
-                                    @endphp
-                                    {{ $first }}{{ $last }}
-                                @endif
-                            </div>
-                            <p class="text-sm font-semibold text-gray-900">{{ $comment->user->username }}</p>
-                        </div>
-                        <div class="text-gray-600 text-sm mb-3 truncate max-w-[37rem]">{{ $comment->komentar }}</div>
-        
-                        <div class="flex items-center justify-between text-xs text-gray-500">
-
-                            <!-- #region Form Like -->
-                            <form action="/like" method="POST" class="inline">
-                                @csrf
-                                <input type="hidden" name="comment_id" value="{{ $comment->id }}">
-                                <input type="hidden" name="type" value="comment">
-
-                                <button type="submit"
-                                    class="flex items-center gap-1 text-red-500 hover:text-red-600 transition-colors duration-150"
-                                    aria-label="Like">
-                                    
-                                    @if ($comment->is_liked)
-                                    
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M4.318 6.318a4.5 4.5 0 010 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                                    </svg>
+            @if ($allComments->isNotEmpty())
+                <div class="space-y-4 mb-4 max-h-[18rem] overflow-y-auto custom-scrollbar">
+                    
+                    @foreach ($allComments as $comment)
+                        <div 
+                            class="bg-white rounded-lg p-5 shadow-md relative min-w-[40rem] border-l-4 border-blue-400"
+                        >
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="flex justify-center items-center w-9 h-9 rounded-full bg-blue-100 text-blue-600 font-semibold text-sm select-none overflow-hidden">
+                                    @if ($comment->user->pp)
+                                        <img src="{{ asset($comment->user->pp) }}" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
                                     @else
+                                        @php
+                                        $nama = trim($comment->user->nama ?? '');
+                                        $parts = explode(' ', $nama);
+                                        $first = strtoupper(substr($parts[0] ?? '', 0, 1));
+                                        $last = strtoupper(substr(end($parts) ?: '', 0, 1));
+                                        @endphp
+                                        {{ $first }}{{ $last }}
+                                    @endif
+                                </div>
+                                <p class="text-sm font-semibold text-gray-900">{{ $comment->user->username }}</p>
+                            </div>
+                            <div class="text-gray-600 text-sm mb-3 truncate max-w-[37rem]">{{ $comment->komentar }}</div>
+            
+                            <div class="flex items-center justify-between text-xs text-gray-500">
+
+                                <!-- #region Form Like -->
+                                <form action="/like" method="POST" class="inline">
+                                    @csrf
+                                    <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                                    <input type="hidden" name="type" value="comment">
+
+                                    <button type="submit"
+                                        class="flex items-center gap-1 text-red-500 hover:text-red-600 transition-colors duration-150"
+                                        aria-label="Like">
+                                        
+                                        @if ($comment->is_liked)
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 010 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                        @else
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 010 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                        @endif
+
+                                        <span>{{ $comment->likes_count }}</span>
+                                    </button>
+                                </form>
+                                <!-- #endregion -->
+            
+                                <!-- #region Time -->
+                                <span class="flex items-center gap-1 text-gray-400 text-sm">
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="w-4 h-4"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
-                                        stroke-width="1.5"
-                                        class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M4.318 6.318a4.5 4.5 0 010 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                     </svg>
-                                    @endif
-
-                                    <span>{{ $comment->likes_count }}</span>
-                                </button>
-                            </form>
-                            <!-- #endregion -->
-        
-                            <!-- #region Time -->
-                            <span class="flex items-center gap-1 text-gray-400 text-sm">
-                                
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="w-4 h-4"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                                {{ $comment->created_at->diffForHumans() }}
-                            </span>
-                            <!-- #endregion -->
-                        
+                                    {{ $comment->created_at->diffForHumans() }}
+                                </span>
+                                <!-- #endregion -->
+                            
+                            </div>
                         </div>
-                    </div>
-                @endforeach
-                <br>
-            </div>
+                    @endforeach
+                    <br>
+                </div>
+            @endif
             <!-- #endregion -->
 
             <!-- #region Komentar Submission -->
@@ -335,22 +337,20 @@
                         <input type="hidden" name="type" value="discussion">
                         <input type="hidden" value="{{ $discussion->id }}" name="discussion_id"/>
 
-                        <div class="relative w-full">
-                            
-                            <input
-                            class="border border-gray-300 rounded-md px-4 py-2 pr-20 w-full focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300"
-                            id="komentar"
-                            name="komentar"
-                            type="text"
-                            placeholder="Masukkan Komentar"
-                            required
-                            />
+                        <div class="relative w-full ">
+                            <textarea
+                                class="border border-gray-300 rounded-lg p-4 pr-24 w-full h-24 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm overflow-y-scroll custom-scrollbar"
+                                id="komentar"
+                                name="komentar"
+                                placeholder="Masukkan Komentar Anda..."
+                                required
+                            ></textarea>
 
                             <button
-                            type="submit"
-                            class="absolute inset-y-0 right-0 flex items-center px-4 bg-blue-400 text-white rounded-r-md hover:bg-blue-500 transition-colors duration-200"
+                                type="submit"
+                                class="absolute right-2 bottom-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors duration-200 shadow-md"
                             >
-                            Kirim
+                                Kirim
                             </button>
                         </div>
                     </form>
