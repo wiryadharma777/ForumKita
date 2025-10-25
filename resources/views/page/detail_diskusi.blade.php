@@ -259,7 +259,7 @@
                                 </div>
                                 <p class="text-sm font-semibold text-gray-900">{{ $comment->user->username }}</p>
                             </div>
-                            <div class="text-gray-600 text-sm mb-3 truncate max-w-[37rem]">{{ $comment->komentar }}</div>
+                            <div class="text-gray-600 text-sm mb-3 max-w-[37rem]">{!! nl2br(e($comment->komentar)) !!}</div>
             
                             <div class="flex items-center justify-between text-xs text-gray-500">
 
