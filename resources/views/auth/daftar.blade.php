@@ -21,7 +21,7 @@
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6);">
-    <div class="w-full max-w-6xl h-[600px] bg-white rounded-2xl shadow-lg flex flex-row-reverse overflow-hidden">
+    <div class="w-full max-w-6xl bg-white rounded-2xl shadow-lg flex flex-row-reverse overflow-hidden">
         <div class="relative flex-1 p-12 flex flex-col justify-center items-start text-white bg-gradient-to-br from-blue-700 to-blue-400">
             <h1 class="text-4xl font-bold mb-4">
                 Bergabung dengan <span class="text-blue-200">Komunitas Kami</span>
@@ -38,7 +38,7 @@
             </div>
         </div>
       
-        <div class="w-full md:w-1/2 lg:w-2/5 p-10 flex flex-col justify-center items-center bg-white">
+        <div class="overflow-y custom-scrollbar w-full md:w-1/2 lg:w-2/5 p-10 flex flex-col justify-center items-center bg-white">
             <h2 class="text-2xl font-bold text-gray-800 mb-8">
                 DAFTAR AKUN
             </h2>

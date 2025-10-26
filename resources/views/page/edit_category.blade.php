@@ -27,7 +27,6 @@
         @if (session('success'))
             <div class="mb-4 flex items-start justify-between rounded-md border border-green-300 bg-green-50 p-4 text-green-800 shadow-md transition-all">
                 <div class="flex items-center gap-2">
-                <
                 <span class="text-sm font-medium">{{ session('success') }} <a href="/login" class=" hover:text-blue-400 hover:underline"></a></span>
                 </div>
                 
